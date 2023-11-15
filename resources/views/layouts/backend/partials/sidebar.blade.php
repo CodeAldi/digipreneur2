@@ -69,7 +69,7 @@
         </li>
         @elseif (Auth::user()->hasRole('instruktur'))
         <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Materi Dan Tugas</span>
+            <span class="menu-header-text">Materi Dan Penugasan</span>
         </li>
         <li class="menu-item @if(Request::RouteIs('admin.materi.*')) active @endif">
             <a href="{{ route('admin.materi.index') }}" class="menu-link">
@@ -80,7 +80,7 @@
         <li class="menu-item @if(Request::RouteIs('admin.enroll.instruktur.*')) active @endif">
             <a href="{{ route('admin.enroll.instruktur.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-task"></i>
-                <div>Tugas</div>
+                <div>Penugasan</div>
             </a>
         </li>
         <li class="menu-item @if(Request::RouteIs('admin.enroll.instruktur.*')) active @endif">
