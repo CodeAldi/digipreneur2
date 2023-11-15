@@ -32,7 +32,7 @@
             </a>
         </li>
         <li class="menu-item @if(Request::RouteIs('admin.peserta.*')) active @endif">
-            <a href="index.html" class="menu-link">
+            <a href="{{ route('admin.peserta.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-group"></i>
                 <div >Peserta</div>
             </a>
