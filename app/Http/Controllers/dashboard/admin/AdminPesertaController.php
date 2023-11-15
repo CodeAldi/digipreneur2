@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\dashboard\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Peserta;
 use Illuminate\Http\Request;
 
 class AdminPesertaController extends Controller
@@ -12,7 +13,9 @@ class AdminPesertaController extends Controller
      */
     public function index()
     {
-        //
+        $peserta = Peserta::all();
+        return view('backend.admin.peserta.index')
+        ->with('peserta',$peserta);
     }
 
     /**
@@ -60,6 +63,9 @@ class AdminPesertaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $peserta = Peserta::find($id);
+        $peserta->user->delete();
+        $peserta->delete();
+        return redirect()->route('admin.peserta.index');
     }
 }

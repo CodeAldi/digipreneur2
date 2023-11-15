@@ -3,6 +3,7 @@
 use App\Http\Controllers\dashboard\admin\AdminEnrollInstrukturiController;
 use App\Http\Controllers\dashboard\admin\AdminInstrukturController;
 use App\Http\Controllers\dashboard\admin\AdminMateriController;
+use App\Http\Controllers\dashboard\admin\AdminPesertaController;
 use App\Http\Controllers\dashboard\instruktur\InstrukturMateriController;
 use App\Http\Controllers\frontend\authController;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,10 @@ Route::middleware(['auth','role:admin'])->group(function() {
         Route::post('dashboard/admin/instruktur/store','store')->name('admin.instruktur.store');
         Route::delete('dashboard/admin/instruktur/{id}/destroy','destroy')->name('admin.instruktur.destroy');
 
+    });
+    Route::controller(AdminPesertaController::class)->group(function(){
+        Route::get('dashboard/admin/peserta.list','index')->name('admin.peserta.index');
+        Route::delete('dashboard/admin/peserta/{id}/destroy','destroy')->name('admin.peserta.destroy');
     });
     Route::controller(AdminMateriController::class)->group(function(){
         Route::get('dashboard/admin/materi/list','index')->name('admin.materi.index');
