@@ -55,13 +55,13 @@
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Pre & Post Test</span>
         </li>
-        <li class="menu-item @if(Request::RouteIs('admin.enroll.instruktur.*')) active @endif">
+        <li class="menu-item @if(Request::RouteIs('admin.enroll.pratest')) active @endif">
             <a href="{{ route('admin.enroll.instruktur.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-hourglass-top"></i>
                 <div>Pre Test</div>
             </a>
         </li>
-        <li class="menu-item @if(Request::RouteIs('admin.enroll.instruktur.*')) active @endif">
+        <li class="menu-item @if(Request::RouteIs('admin.posttest')) active @endif">
             <a href="{{ route('admin.enroll.instruktur.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-hourglass-bottom"></i>
                 <div>Post Test</div>
