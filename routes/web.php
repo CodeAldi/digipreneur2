@@ -19,12 +19,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function(){
+    return view('frontend.landing');
+});
+
 Route::get('dashboard', function () {
     return view('backend.dashboard');
 })->middleware('auth')->name('dashboard');
 
 Route::controller(authController::class)->group(function () {
-    Route::get('/', 'login')->middleware('guest')->name('login');
+    Route::get('/login', 'login')->middleware('guest')->name('login');
     Route::get('register', 'register')->middleware('guest')->name('register');
     Route::post('/register', 'pesertastore')->middleware('guest')->name('register.store');
     Route::post('/login', 'authenticate')->middleware('guest')->name('authenticate');
